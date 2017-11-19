@@ -23,6 +23,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        //Line below deals with the User being shown the saved data.  If there is saved User Data, display it.
+        if let userData = UserDefaults.standard.object(forKey: "input")
+        {
+            myTextView.text = userData as! String
+        }
+        
+        
         
         myTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.count), userInfo: nil, repeats: true)
         
