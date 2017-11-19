@@ -1,10 +1,14 @@
 //
 //  ViewController.swift
 //  Diary
-//
+//  -This app saves the text input every five seconds
 //  Created by Nino Rorudan on 11/19/17.
 //  Copyright © 2017 The NTMC Foundation. All rights reserved.
 //
+//
+
+
+
 
 import UIKit
 
@@ -31,8 +35,14 @@ class ViewController: UIViewController {
     }
 
     
+    
+    //the app saves the data every five seconds, so every five seconds, the count function is fired.
     func count()
     {
+        if myTextView.text != ""
+        {
+            UserDefaults.standard.set(myTextView.text, forKey: "input")
+        }
         
     }
 
